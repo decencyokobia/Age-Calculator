@@ -41,7 +41,7 @@ button.addEventListener("click", () => {
 
        let ageYears = today.getFullYear() - parseInt(year.value);
        let ageMonths = today.getMonth() + 1 - parseInt(month.value);
-       let ageDays = today.getDate() -1 - parseInt(day.value);
+       let ageDays = today.getDate() - parseInt(day.value);
 
 
        if(ageDays < 0) {
@@ -78,6 +78,15 @@ button.addEventListener("click", () => {
 
 
 resetBtn.addEventListener("click", () => {
+    allFields.forEach(value => {
+        value.classList.remove("red");
+    })
+   caps.forEach(value => {
+    value.classList.remove("wrongSpan");
+   })
+   msg.forEach(value => {
+    value.classList.remove("wrongSpan");
+   })
     yearDisplay.value = "";
     monthDisplay.value = "";
     dayDisplay.value = "";
